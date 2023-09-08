@@ -50,5 +50,10 @@ def h1(s):
 
 def h3(s):
     # implement this function
+    cnt = 0
     board, _, _ = s
-    return 0
+    for pos,num in enumerate(board,1) :
+        if num==0 : continue
+        if (num-1)//3 != (pos-1)//3 : cnt+=1
+        if num%3 != pos%3 : cnt+=1
+    return cnt
