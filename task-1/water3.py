@@ -7,14 +7,8 @@ def is_goal(s):
 
 def successors(s):
     a,b,c = s
-    #empty one bottle
-    if a>0: yield ((0,b,c),a)
-    if b>0: yield ((a,0,c),b)
-    if c>0: yield ((a,b,0),c)
-    #fill one bottle
-    if a<8: yield ((8,b,c),8-a)
-    if b<5: yield ((a,5,c),5-b)
-    if c<3: yield ((a,b,3),3-c)
+    #There is no use in calculating successors of emptyed and filled bottle since the question not allow any additional 
+    #water(no filling) and total water have to remain the same as the initial state that mean no losing(emptying) any water
     #move between bottles
     ax,bx,cx = 8-a,5-b,3-c
     #a to b
